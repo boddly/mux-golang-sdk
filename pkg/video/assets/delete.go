@@ -8,6 +8,9 @@ import (
 // Delete an asset using the ID of the asset to be deleted
 func (c *Client) Delete(id string) error {
 	req, err := http.NewRequest(http.MethodDelete, AssetURL+"/"+id, nil)
+	if err != nil {
+		return err
+	}
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
 	resp, err := c.HTTP.Do(req)

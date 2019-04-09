@@ -55,6 +55,9 @@ func (c *Client) Create(opts CreateOptions) (*CreateResponse, error) {
 		return nil, err
 	}
 	req, err := http.NewRequest(http.MethodPost, AssetURL, bytes.NewBuffer(j))
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 

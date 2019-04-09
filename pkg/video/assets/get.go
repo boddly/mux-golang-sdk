@@ -8,6 +8,9 @@ import (
 // Get an asset using the ID of the asset to be retrieved
 func (c *Client) Get(id string) (*Asset, error) {
 	req, err := http.NewRequest(http.MethodGet, AssetURL+id, nil)
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
