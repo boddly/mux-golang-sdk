@@ -14,6 +14,9 @@ type ListData struct {
 // List assets
 func (c *Client) List(limit, page int32) ([]Asset, error) {
 	req, err := http.NewRequest(http.MethodGet, AssetURL, nil)
+	if err != nil {
+		return nil, err
+	}
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
 	resp, err := c.HTTP.Do(req)

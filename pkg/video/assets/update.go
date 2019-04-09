@@ -19,6 +19,9 @@ func (c *Client) UpdateMP4(id, value string) (*Asset, error) {
 
 	b := []byte(fmt.Sprintf(`{"mp4_support":"%s"}`, value))
 	req, err := http.NewRequest(http.MethodPut, AssetURL+"/"+id+"/mp4-support", bytes.NewBuffer(b))
+	if err != nil {
+		return nil, err
+	}
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
 	resp, err := c.HTTP.Do(req)
@@ -42,6 +45,9 @@ func (c *Client) UpdateMP4(id, value string) (*Asset, error) {
 func (c *Client) UpdateMaster(id, value string) (*Asset, error) {
 	b := []byte(fmt.Sprintf(`{ "master_access": "%s" }`, value))
 	req, err := http.NewRequest(http.MethodPut, AssetURL+"/"+id+"/master-access", bytes.NewBuffer(b))
+	if err != nil {
+		return nil, err
+	}
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
 	resp, err := c.HTTP.Do(req)

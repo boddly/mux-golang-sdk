@@ -20,6 +20,9 @@ type InputInfoData struct {
 // InputInfo Returns a list of the input objects that were used to create the asset along with any settings that were applied to each input.
 func (c *Client) InputInfo(id string) ([]*InputInfoData, error) {
 	req, err := http.NewRequest(http.MethodGet, AssetURL+"/"+id+"/input-info", nil)
+	if err != nil {
+		return nil, err
+	}
 	req.SetBasicAuth(c.AccessToken, c.SecretKey)
 
 	resp, err := c.HTTP.Do(req)
