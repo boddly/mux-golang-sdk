@@ -1,5 +1,10 @@
 # mux-golang-sdk
 
+<p align="center">
+
+    <a href="https://codeclimate.com/github/boddly/mux-golang-sdk/maintainability"><img src="https://api.codeclimate.com/v1/badges/286fa7f37b9b1ba8648c/maintainability" /></a>
+    <a href="https://codeclimate.com/github/boddly/mux-golang-sdk/test_coverage"><img src="https://api.codeclimate.com/v1/badges/286fa7f37b9b1ba8648c/test_coverage" /></a>
+</p>
 Un-Official Mux API wrapper for Go projects, supporting both Mux Data and Mux Video.
 
 [Mux Video](https://mux.com/) is an API-first platform, powered by data and designed by video experts to make beautiful video possible for every development team.
