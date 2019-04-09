@@ -5,7 +5,8 @@
     <a href="https://codeclimate.com/github/boddly/mux-golang-sdk/test_coverage"><img src="https://api.codeclimate.com/v1/badges/286fa7f37b9b1ba8648c/test_coverage" /></a>
     <a href="https://travis-ci.org/boddly/mux-golang-sdk"><img src="https://travis-ci.org/boddly/mux-golang-sdk.svg?branch=master" /></a>
     <a href="https://goreportcard.com/report/github.com/boddly/mux-golang-sdk"><img src="https://goreportcard.com/badge/github.com/boddly/mux-golang-sdk" /></a>
-    
+    <a href="https://goreportcard.com/report/github.com/boddly/mux-golang-sdk"><img src="https://goreportcard.com/badge/github.com/boddly/mux-golang-sdk" /></a>
+    <a href="https://github.com/boddly/mux-golang-sdk/blob/master/LICENSE"><img src="https://img.shields.io/github/license/boddly/mux-golang-sdk.svg">
 </p>
 Un-Official Mux API wrapper for Go projects, supporting both Mux Data and Mux Video.
 
