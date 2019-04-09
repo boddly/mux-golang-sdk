@@ -1,0 +1,37 @@
+language: go
+install: true
+sudo: required
+# test stage automatically added for each go version
+go:
+  - 1.12.x
+  - master
+# script used in the automatically added test stage
+script:
+  - 'if [ "${JOB}" = "test" ]; then make test; fi'
+  - 'if [ "${JOB}" = "lint" ]; then make lint; fi'
+  - 'if [ "${JOB}" = "integration" ]; then make integration; fi'
+ 
+env:
+  global:
+    - GOARCH=amd64
+    - GO_FOR_RELEASE=1.11
+    - IMAGE_NAME=tsuru/api
+  matrix:
+    - JOB=test
+    - JOB=lint
+    - JOB=integration
+jobs:
+  fast_finish: true
+  allow_failures:
+    - go: master
+  exclude:
+    - go: master
+      env: JOB=test
+    - go: master
+      env: JOB=lint
+    - go: master
+      env: JOB=integration
+notifications:
+  email:
+    on_success: change
+    on_failure: always
