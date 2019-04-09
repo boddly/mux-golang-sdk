@@ -1,8 +1,8 @@
 package mux
 
 import (
-	"github.com/boddly/mux-golang-sdk/data"
-	"github.com/boddly/mux-golang-sdk/video"
+	"github.com/boddly/mux-golang-sdk/pkg/data"
+	"github.com/boddly/mux-golang-sdk/pkg/video"
 )
 
 // Mux provides access to the Mux Video and Mux Data API

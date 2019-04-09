@@ -1,11 +1,11 @@
 package data
 
 import (
-	"github.com/boddly/mux-golang-sdk/data/errors"
-	"github.com/boddly/mux-golang-sdk/data/exports"
-	"github.com/boddly/mux-golang-sdk/data/filters"
-	"github.com/boddly/mux-golang-sdk/data/metrics"
-	"github.com/boddly/mux-golang-sdk/data/views"
+	"github.com/boddly/mux-golang-sdk/pkg/data/errors"
+	"github.com/boddly/mux-golang-sdk/pkg/data/exports"
+	"github.com/boddly/mux-golang-sdk/pkg/data/filters"
+	"github.com/boddly/mux-golang-sdk/pkg/data/metrics"
+	"github.com/boddly/mux-golang-sdk/pkg/data/views"
 )
 
 // Data provides access to the mux Data API

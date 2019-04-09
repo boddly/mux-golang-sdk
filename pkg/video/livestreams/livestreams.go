@@ -1,8 +1,8 @@
 package livestreams
 
 import (
-	"github.com/boddly/mux-golang-sdk/video/assets"
-	"github.com/boddly/mux-golang-sdk/video/playbacks"
+	"github.com/boddly/mux-golang-sdk/pkg/video/assets"
+	"github.com/boddly/mux-golang-sdk/pkg/video/playbacks"
 )
 
 //LiveStream represents a unique live stream of video being pushed to Mux.

@@ -1,6 +1,6 @@
 package video
 
-import "github.com/boddly/mux-golang-sdk/video/assets"
+import "github.com/boddly/mux-golang-sdk/pkg/video/assets"
 
 // Video provides access to the mux video API
 type Video struct {

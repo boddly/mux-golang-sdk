@@ -1,6 +1,6 @@
 package livestreams
 
-import "github.com/boddly/mux-golang-sdk/video/assets"
+import "github.com/boddly/mux-golang-sdk/pkg/video/assets"
 
 // CreateRequest is the object passed into the create request
 type CreateRequest struct {

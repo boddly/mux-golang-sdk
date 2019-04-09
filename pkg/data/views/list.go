@@ -1,6 +1,6 @@
 package views
 
-import "github.com/boddly/mux-golang-sdk/data/metrics"
+import "github.com/boddly/mux-golang-sdk/pkg/data/metrics"
 
 // ListResponse is the struct containing data from the List request
 type ListResponse struct {

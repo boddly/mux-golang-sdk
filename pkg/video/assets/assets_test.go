@@ -3,7 +3,6 @@
 package assets
 
 import (
-	"fmt"
 	"os"
 	"testing"
 	"time"
@@ -20,7 +19,6 @@ var (
 func TestAssetLifeCycle(t *testing.T) {
 	c := Client{AccessToken: accessToken, SecretKey: secret}
 	if secret == "" || accessToken == "" {
-		fmt.Printf("secret == %v\naccessToken == %v\n", secret, accessToken)
 		t.FailNow()
 	}
 
@@ -76,44 +74,3 @@ func TestAssetLifeCycle(t *testing.T) {
 		}
 	}
 }
-
-/*&assets.InputInfoData{
-	Settings:assets.Input{
-		URL:"https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4",
-		OverlaySetting:
-		assets.OverlaySetting{
-			VerticalAlign:"",
-			VerticalMargin:"",
-			HorizontalAlign:"",
-			HorizontalMargin:"",
-			Width:"",
-			Height:"",
-			Opacity:""
-		}
-	},
-	File:assets.InputDetails{
-		ContainerFormat:"mov,mp4,m4a,3gp,3g2,mj2",
-		Tracks:[]assets.InputTracks{
-			assets.InputTracks{
-				Type:"video",
-				Duration:23.8238,
-				Width:1920,
-				Height:1080,
-				FrameRate:29.97,
-				Encoding:"h264",
-				SampleRate:0,
-				SampleSize:0
-			},
-			assets.InputTracks{
-				Type:"audio",
-				Duration:23.823792,
-				Width:0,
-				Height:0,
-				FrameRate:0,
-				Encoding:"aac",
-				SampleRate:48000,
-				SampleSize:0
-			}
-		}
-	}
-}*/

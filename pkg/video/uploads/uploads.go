@@ -1,6 +1,6 @@
 package uploads
 
-import "github.com/boddly/mux-golang-sdk/video/assets"
+import "github.com/boddly/mux-golang-sdk/pkg/video/assets"
 
 // UploadError is only set if an error occurred during asset creation.
 type UploadError struct {
