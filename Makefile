@@ -6,6 +6,7 @@ test:
 	@echo "Running ${@}"
 	@go clean ./...
 	@go test ./...
+	@go test -v -covermode=count -coverprofile=coverage.out
 
 integration:
 	@echo "Running ${@}"

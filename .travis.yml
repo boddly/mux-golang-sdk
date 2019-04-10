@@ -6,13 +6,12 @@ go:
   - 1.12.x
   - master
 before_install:
-- go get github.com/axw/gocov/gocov
+- go get golang.org/x/tools/cmd/cover
 - go get github.com/mattn/goveralls
-- if ! go get github.com/golang/tools/cmd/cover; then go get golang.org/x/tools/cmd/cover; fi
 # script used in the automatically added test stage
 script:
   - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.13
-  - $(go env GOPATH)/bin/goveralls -service=travis-ci
+  - $(go env GOPATH)/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
   - 'if [ "${JOB}" = "test" ]; then make test; fi'
   - 'if [ "${JOB}" = "lint" ]; then make lint; fi'
   - 'if [ "${JOB}" = "integration" ]; then make integration; fi'
