@@ -1,6 +1,9 @@
 package image
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Thumbnail pulls images from a Mux Video asset in real time.
 // Any frame of an asset is available as a PNG or JPG image, to use as a thumbnail or poster image
@@ -34,6 +37,7 @@ type thumbnailOptions struct {
 // NewThumbnail returns the thumbnail with default values
 // use the setters to override the defaults
 func NewThumbnail(id, ext string) (Thumbnail, error) {
+	ext = strings.ToLower(ext)
 	if ext != "png" && ext != "jpg" {
 		return nil, fmt.Errorf("%s is an invalid extension, extensions must be either 'png' or 'jpg'", ext)
 	}
