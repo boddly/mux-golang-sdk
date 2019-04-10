@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://codeclimate.com/github/boddly/mux-golang-sdk/maintainability"><img src="https://api.codeclimate.com/v1/badges/286fa7f37b9b1ba8648c/maintainability" /></a>
-    <a href="https://codeclimate.com/github/boddly/mux-golang-sdk/test_coverage"><img src="https://api.codeclimate.com/v1/badges/286fa7f37b9b1ba8648c/test_coverage" /></a>
+    <a href='https://coveralls.io/github/boddly/mux-golang-sdk?branch=master'><img src='https://coveralls.io/repos/github/boddly/mux-golang-sdk/badge.svg?branch=master' alt='Coverage Status' /></a>
     <a href="https://travis-ci.org/boddly/mux-golang-sdk"><img src="https://travis-ci.org/boddly/mux-golang-sdk.svg?branch=master" /></a>
     <a href="https://goreportcard.com/report/github.com/boddly/mux-golang-sdk"><img src="https://goreportcard.com/badge/github.com/boddly/mux-golang-sdk" /></a>
     <a href="https://godoc.org/github.com/boddly/mux-golang-sdk"><img src="https://godoc.org/github.com/boddly/mux-golang-sdk?status.svg" alt="GoDoc"></a>
