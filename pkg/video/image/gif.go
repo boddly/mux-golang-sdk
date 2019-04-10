@@ -47,7 +47,7 @@ func (g *options) String() string {
 	if g.height != -1 {
 		s = fmt.Sprintf("%sheight=%d", s, g.height)
 	}
-	return fmt.Sprintf("%s&width=%d&start=%f&end=%f&fps=%d", s, g.width, g.start, g.end, g.fps)
+	return fmt.Sprintf("%s&width=%d&start=%.1f&end=%.1f&fps=%d", s, g.width, g.start, g.end, g.fps)
 }
 
 func (g *options) SetStart(s float64) GIF {

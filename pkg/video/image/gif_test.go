@@ -196,3 +196,23 @@ func TestSetFPS(t *testing.T) {
 		assert.Equal(t, v.expected, gif.fps)
 	}
 }
+
+func TestString(t *testing.T) {
+	cases := []struct {
+		gif      GIF
+		expected string
+	}{
+		{
+			gif:      func() GIF { gif, err := NewGif("foo"); require.NoError(t, err); return gif }(),
+			expected: "https://image.mux.com/foo/animated.gif?&width=320&start=0.0&end=5.0&fps=15",
+		},
+		{
+			gif:      func() GIF { gif, err := NewGif("foo"); require.NoError(t, err); gif.SetHeight(90); return gif }(),
+			expected: "https://image.mux.com/foo/animated.gif?height=90&width=320&start=0.0&end=5.0&fps=15",
+		},
+	}
+
+	for _, v := range cases {
+		assert.Equal(t, v.expected, v.gif.String())
+	}
+}
