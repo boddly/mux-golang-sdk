@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func assertType(t *testing.T, g GIF) *options {
+func assertGIFType(t *testing.T, g GIF) *options {
 	s, ok := g.(*options)
 	require.True(t, ok)
 
@@ -18,7 +18,7 @@ func TestNewGif(t *testing.T) {
 	gif, err := NewGif("foo")
 	require.NoError(t, err)
 
-	s := assertType(t, gif)
+	s := assertGIFType(t, gif)
 
 	assert.Equal(t, options{
 		id:     "foo",
@@ -52,7 +52,7 @@ func TestSetStart(t *testing.T) {
 	for _, v := range cases {
 		v.gif.SetStart(v.input)
 
-		gif := assertType(t, v.gif)
+		gif := assertGIFType(t, v.gif)
 		assert.Equal(t, v.input, gif.start)
 	}
 }
@@ -88,7 +88,7 @@ func TestSetEnd(t *testing.T) {
 	for _, v := range cases {
 		v.gif.SetEnd(v.input)
 
-		gif := assertType(t, v.gif)
+		gif := assertGIFType(t, v.gif)
 		assert.Equal(t, v.input, gif.end)
 		assert.Equal(t, v.start, gif.start)
 	}
@@ -120,7 +120,7 @@ func TestSetWidth(t *testing.T) {
 	for _, v := range cases {
 		v.gif.SetWidth(v.input)
 
-		gif := assertType(t, v.gif)
+		gif := assertGIFType(t, v.gif)
 		assert.Equal(t, v.expected, gif.width)
 	}
 }
@@ -156,7 +156,7 @@ func TestSetHeight(t *testing.T) {
 	for _, v := range cases {
 		v.gif.SetHeight(v.input)
 
-		gif := assertType(t, v.gif)
+		gif := assertGIFType(t, v.gif)
 		assert.Equal(t, v.expected, gif.height)
 	}
 }
@@ -192,7 +192,7 @@ func TestSetFPS(t *testing.T) {
 	for _, v := range cases {
 		v.gif.SetFPS(v.input)
 
-		gif := assertType(t, v.gif)
+		gif := assertGIFType(t, v.gif)
 		assert.Equal(t, v.expected, gif.fps)
 	}
 }
