@@ -1,6 +1,7 @@
 package image
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -25,14 +26,19 @@ type options struct {
 
 // NewGif returns the gif with default values
 // use the setters to override the defaults
-func NewGif(id string) GIF {
+func NewGif(id string) (GIF, error) {
+	if id == "" {
+		return nil, errors.New("invalid id")
+	}
+
 	return &options{
+		id:     id,
 		start:  0,
 		end:    5,
 		width:  320,
 		height: -1,
 		fps:    15,
-	}
+	}, nil
 }
 
 func (g *options) String() string {
@@ -52,9 +58,8 @@ func (g *options) SetStart(s float64) GIF {
 func (g *options) SetEnd(s float64) GIF {
 	g.end = s
 
-	total := g.end + g.start
-	if total > 10 {
-		g.start = (total - 10) + g.start
+	if (g.end - g.start) > 10 {
+		g.start = g.end - 10
 	}
 
 	return g
@@ -65,19 +70,36 @@ func (g *options) SetWidth(s int32) GIF {
 		s = 640
 	}
 
+	if s < 0 {
+		return g
+	}
+
 	g.width = s
 
 	return g
 }
 
 func (g *options) SetHeight(s int32) GIF {
+	if s > 640 {
+		s = 640
+	}
+
+	if s <= 0 {
+		return g
+	}
+
 	g.height = s
+
 	return g
 }
 
 func (g *options) SetFPS(s int32) GIF {
 	if s > 30 {
 		s = 30
+	}
+
+	if s <= 0 {
+		return g
 	}
 
 	g.fps = s
