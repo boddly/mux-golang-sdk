@@ -51,7 +51,20 @@ func NewThumbnail(id, ext string) (Thumbnail, error) {
 }
 
 func (t *thumbnailOptions) String() string {
-	s := fmt.Sprintf("https://image.mux.com/%s/thumbnail.%s", t.id, t.extension)
+	s := fmt.Sprintf("https://image.mux.com/%s/thumbnail.%s?fit_mode=%s&flip_v=%t&flip_h=%t", t.id, t.extension, t.fitMode, t.flipV, t.flipH)
+
+	if t.time >= 0 {
+		s = fmt.Sprintf("%s&time=%f", s, t.time)
+	}
+	if t.width >= 0 {
+		s = fmt.Sprintf("%s&width=%d", s, t.width)
+	}
+	if t.height >= 0 {
+		s = fmt.Sprintf("%s&height=%d", s, t.height)
+	}
+	if t.rotate >= 0 {
+		s = fmt.Sprintf("%s&rotate=%d", s, t.rotate)
+	}
 
 	return s
 }
